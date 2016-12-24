@@ -169,14 +169,16 @@ class ModalTimerOperator(bpy.types.Operator):
                 bov = getattr(theme,vb)
                 cols = [
                     thing for thing in dir(bov)
-                    if type(getattr(bov,thing))==Color]
+                    if type(getattr(bov,thing))==Color
+                    or (
+                        type(getattr(bov, thing)) == type(theme.view_3d.face_select)
+                        and len(getattr(bov, thing)) == len(theme.view_3d.face_select))]
                 for col in cols:
                     color = getattr(bov,col)
                     #tcolor = bov.back
-
-                    color.r = random()
-                    color.g = random()
-                    color.b = random()
+                    for i, val in enumerate(color):
+                        color[i] = random()
+                    setattr(bov, col, color)
             defilento(self)
 
 
