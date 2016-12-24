@@ -21,14 +21,14 @@
 bl_info = {
     'name': 'Dr. Epilepsy',
     'author': 'Bassam Kurdali, Dalai Felinto, Nathan Letwory, inspired by Bastian Salmela',
-    'version': (1, 0, 6),
+    'version': (1, 0, 7),
     "blender": (2, 5, 9),
     "api": 39104,
     'location': 'View3D > OSKey-D, Help->Dr Epilepsy',
     'description': 'Dr Epililepsy will melt your brain',
     'wiki_url': '',
     'tracker_url': '',
-    'category': '3D View'}
+    'category': 'Doctors'}
 
 
 import bpy
