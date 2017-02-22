@@ -187,7 +187,13 @@ def image_make(theme, struct, color, color_array, image_name):
         im
     except NameError:
         im = bpy.data.images.new(image_name, i/10, 10)
-    im.colorspace_settings.name = 'Non-Color'
+    try:
+        im.colorspace_settings.name = 'Non-Color'
+    except TypeError:
+        try:
+            im.colorspace_settings.name = 'Non-Colour Data'
+        except:
+            pass
     recursive_pixel_color(im, struct, theme, 0)
     return im, color_count
 
