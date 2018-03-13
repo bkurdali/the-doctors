@@ -21,7 +21,7 @@
 bl_info = {
     'name': 'Dr. Epilepsy',
     'author': 'Bassam Kurdali, Dalai Felinto, Nathan Letwory, inspired by Bastian Salmela',
-    'version': (1, 0, 8),
+    'version': (1, 0, 9),
     "blender": (2, 7, 9),
     'location': 'View3D > OSKey-D, Help->Dr Epilepsy',
     'description': 'Dr Epililepsy will melt your brain',
@@ -164,6 +164,7 @@ class ModalTimerOperator(bpy.types.Operator):
                             elem[1] = random()
                             elem[2] = random()
             context.user_preferences.view.ui_line_width = ('THIN', 'THICK')[randint(0,1)]
+            context.user_preferences.view.ui_scale = random() * 3.0
             for vb in dir(theme):
                 bov = getattr(theme,vb)
                 cols = [
